@@ -46,6 +46,8 @@
   </center>
 </form>  
 <%} %>
+</body>
+</html>
 
 
 
