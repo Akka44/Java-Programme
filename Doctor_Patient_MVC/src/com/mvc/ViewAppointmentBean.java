@@ -28,7 +28,7 @@ public class ViewAppointmentBean {
 	public String getPatientName() {
 		return patient_name;
 	}
-	public void setPname(String patient_name) {
+	public void setPatientName(String patient_name) {
 		this.patient_name = patient_name;
 	}
 	public long getPhone() {
@@ -101,7 +101,7 @@ public class ViewAppointmentBean {
 		while(rs.next()){
 			ViewAppointmentBean ab=new ViewAppointmentBean();
 			ab.setId(rs.getInt(1));
-			ab.setPname(rs.getString(2));
+			ab.setPatientName(rs.getString(2));
 			ab.setPhone(rs.getLong(3));
 			ab.setEmail(rs.getString(4));
 			ab.setGender(rs.getString(5));
@@ -109,8 +109,9 @@ public class ViewAppointmentBean {
 			ab.setSpecialist(rs.getString(7));
 			ab.setDate_of_appointment(rs.getString(8));
 			ab.setTime_of_appointment(rs.getString(9));
-			ab.setDoctorName(rs.getString(10));
-			ab.setStatus(rs.getString(11));
+			
+			ab.setStatus(rs.getString(10));
+			ab.setDoctorName(rs.getString(11));
 			l.add(ab);
 		}
 		return l;

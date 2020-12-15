@@ -27,7 +27,7 @@
 			<td>Status</td>
 		</tr>
 <%
-int id=(Integer)session.getAttribute("id");
+int id=(Integer)session.getAttribute("sid");
 List<AppointmentBean> l=new AppointmentBean().status(id);
 Iterator i=l.iterator();
 while(i.hasNext()){

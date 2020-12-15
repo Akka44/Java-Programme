@@ -7,7 +7,7 @@ public class AcceptBean {
 	public String doctor_name;
 	public String status;
 	public int aid;
-	public String getDname() {
+	public String getDoctorName() {
 		return doctor_name;
 	}
 	public void setDoctorName(String doctor_name) {

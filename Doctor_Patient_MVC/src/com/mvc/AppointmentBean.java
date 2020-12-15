@@ -94,7 +94,7 @@ public class AppointmentBean {
 	public boolean apply(String patient_name, long phone, String email, String gender, String blood_group, String specialist,
 		String date_of_appointment, String time_of_appointment, int pid) throws Exception {
 		Connection con=ConnectionEx.connectivity();
-		String sql = "insert into appointment(pname,phone,email,gender,blood_group,specialist,date_of_appointment,time_of_appointment,pid) values(?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into appointment(patient_name,phone,email,gender,blood_group,specialist,date_of_appointment,time_of_appointment,pid) values(?,?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, patient_name);
 		ps.setLong(2, phone);

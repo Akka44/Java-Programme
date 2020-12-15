@@ -31,6 +31,8 @@ package com.mvc;
 			if(rb!=null) {
 		    	hs.setAttribute("doctorDetails", rb);
 		    	hs.setAttribute("sid",  rb.getId());
+		    	hs.setAttribute("name", rb.getName());
+		    	hs.setAttribute("specialisation", rb.getSpecialisation());
 		    	response.sendRedirect("./doctor_home.html?msg=loggedin");
 		    }
 		    else {

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 
 public class AppointmentController extends HttpServlet{
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    	String patient_name=request.getParameter("pname");
+    	String patient_name=request.getParameter("patient_name");
     	long mobile=Long.parseLong(request.getParameter("phone"));
     	String  email=request.getParameter("email");
     	String gender=request.getParameter("gender");
@@ -19,8 +19,7 @@ public class AppointmentController extends HttpServlet{
 		String time_of_appointment = request.getParameter("time_of_appointment");
 		HttpSession hs=request.getSession();
 		int pid=(Integer)hs.getAttribute("sid");
-		boolean status=false;
-		
+		boolean status=false;		
 		try {
 			status=new AppointmentBean().apply(patient_name,mobile,email,gender,blood_group, specialist, date_of_appointment, time_of_appointment, pid);
 		} catch (Exception e) {

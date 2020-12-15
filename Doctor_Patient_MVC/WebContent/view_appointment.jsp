@@ -19,14 +19,14 @@
 			<td>Gender</td>
 			<td>Blood_group</td>
 			<td>Specialist</td>
-			<td>Date of appointment</td>
-			<td>Time of appointment</td>
+			<td>Date</td>
+			<td>Time</td>
 			<td>Doctor Name</td>
 			<td>Status</td>
 			<td>Action</td>
 		</tr>
 <%
-String specialist=(String) session.getAttribute("specialist");
+String specialist=(String) session.getAttribute("specialisation");
 List<ViewAppointmentBean> l=new ViewAppointmentBean().view(specialist);
 Iterator i=l.iterator();
 while(i.hasNext()){
@@ -46,7 +46,7 @@ ViewAppointmentBean vab=(ViewAppointmentBean)i.next();
 			<%if(vab.getStatus().equalsIgnoreCase("Accepted")){ %>
 			<td>Accepted</td>
 			<%}else{ %>
-			<td><form action="./accept_appointment" method="post"><input type="hidden" name="id" value="<%=vab.getId()%>"> 
+			<td><form action="accept_appointment" method="post"><input type="hidden" name="id" value="<%=vab.getId()%>"> 
 			<input type="submit" value="accept">
 			</form></td>
 			<%} %>
